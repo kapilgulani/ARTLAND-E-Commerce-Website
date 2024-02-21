@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Wishlist | ARTLAND</title>
+    <link rel="stylesheet" href="static/css/style.css">
+  </head>
+  <body>
+    <div class="login-box">
+    <h1>My Wishlist</h1>
+    {% for item in data %}
+    <img class="imageHere" src="static/images/{{ item[0] }}.jpg" alt="sorry friends">
+    <label>Price: {{ item[1] }}/-</label>
+    <br><br><br><br>
+    {% endfor %}
+    <a href="#" id="buy_now_btn" class="btn btn-primary">Buy Now</a>
+    </div>
+
+
+
+
+      <script src="https://js.stripe.com/v3/"></script>
+      {#
+      <script>
+        const checkout_public_key = '{{checkout_public_key}}';
+        const checkout_session_id = '{{checkout_session_id}}';
+      </script>
+      #}
+      <script src="{{ url_for('static', filename='script-ajax.js') }}"></script>
+
+
+
+    
+  	</body>
+
+</html>
+
